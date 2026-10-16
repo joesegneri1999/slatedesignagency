@@ -83,7 +83,7 @@
       var d = new FormData(form);
       if (d.get('_honey')) return;
       var payload = {
-        name: d.get('name'), email: d.get('email'), business: d.get('business') || '—',
+        name: d.get('name'), email: d.get('email'), phone: d.get('phone') || '—', business: d.get('business') || '—',
         services: d.getAll('services').join(', ') || '—', message: d.get('message'),
         _subject: d.get('_subject'), _replyto: d.get('email'), _template: 'table', _captcha: 'false'
       };
@@ -98,7 +98,7 @@
         })
         .catch(function(){
           btn.disabled = false;
-          var body = encodeURIComponent('Name: ' + payload.name + '\nEmail: ' + payload.email + '\nBusiness: ' + payload.business + '\nServices: ' + payload.services + '\n\n' + payload.message);
+          var body = encodeURIComponent('Name: ' + payload.name + '\nEmail: ' + payload.email + '\nPhone: ' + payload.phone + '\nBusiness: ' + payload.business + '\nServices: ' + payload.services + '\n\n' + payload.message);
           status.innerHTML = 'That didn\'t go through. Please email us directly at <a href="mailto:' + EMAIL + '?subject=' + encodeURIComponent(payload._subject) + '&body=' + body + '" style="text-decoration:underline">' + EMAIL + '</a>.';
         });
     });

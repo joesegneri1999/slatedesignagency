@@ -270,9 +270,9 @@ footer.site{border-top:2px solid var(--line);padding:46px 0 30px}
 .s-trans{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;pointer-events:none;visibility:hidden;
   background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.95),transparent 40%),var(--board)}
 .s-trans.in{visibility:visible;pointer-events:auto}
-.s-trans svg{width:170px;height:190px;overflow:visible}
+.s-trans svg{width:min(200px,42vw);height:auto;aspect-ratio:560/729;overflow:visible}
 .s-trans .s-path,.s-trans .s-under{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
-.s-trans .s-path{stroke:var(--ink);stroke-width:11}
+.s-trans .s-path{stroke:#fff;stroke-width:200}
 .s-trans .s-under{stroke:var(--blue);stroke-width:7;opacity:0}
 .s-trans.draw .s-path{animation:drawS .55s cubic-bezier(.6,.05,.4,1) forwards}
 .s-trans.draw .s-under{animation:drawU .22s .5s ease-out forwards}
@@ -345,6 +345,7 @@ footer.site{border-top:2px solid var(--line);padding:46px 0 30px}
 main{animation:fade .22s ease-out}
 body.leaving main,body.leaving footer.site{opacity:0;transition:opacity .12s ease-in}
 .chip{margin:0;text-transform:none}
+.opt{font-weight:400;text-transform:none;color:#555}
 .tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1080px;margin:0 auto}
 .tracks .card{min-height:0}
 .tracks .card .big{font-size:34px}

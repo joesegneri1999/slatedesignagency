@@ -12,6 +12,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="preload" as="image" href="assets/img/slate-s.png">
 
 <script src="assets/js/site.js" defer></script>
 </head>
@@ -57,7 +58,7 @@
       <p class="lead">Last updated October 2026.</p>
     </section>
     <section><div class="faq" style="max-width:760px">
-      <p>When you send a message through the contact form, we receive your name, email, business name, the services you picked, and your message. We use that only to reply to you and talk about your project.</p>
+      <p>When you send a message through the contact form, we receive your name, email, phone number (if you add it), business name, the services you picked, and your message. We use that only to reply to you and talk about your project.</p>
       <p>The form is delivered to our inbox by FormSubmit (formsubmit.co), which processes the message on our behalf. We don't sell or share your information with anyone else.</p>
       <p>This site doesn't use advertising trackers. Fonts are loaded from Google Fonts.</p>
       <p>Want your message deleted, or have a question? Email <a href="mailto:slatedesignagency1999@gmail.com" class="blue">slatedesignagency1999@gmail.com</a>.</p>
@@ -90,9 +91,11 @@
 </div>
 </div>
 <div class="s-trans" aria-hidden="true">
-  <svg viewBox="0 0 100 112">
-    <path class="s-path" pathLength="1" d="M76 20 C66 9 44 6 31 13 C17 21 18 38 32 46 C46 54 70 55 74 72 C78 90 58 100 40 98 C30 97 22 93 17 86"/>
-    <path class="s-under" pathLength="1" d="M10 106 C35 103 62 101 90 98"/>
+  <svg viewBox="0 0 560 729">
+    <defs><mask id="s-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="560" height="729">
+      <path class="s-path" pathLength="1" d="M470 100 C390 60 230 70 150 130 C80 185 90 260 170 300 C270 345 420 350 470 420 C520 490 490 590 390 625 C290 660 140 640 80 575"/>
+    </mask></defs>
+    <image href="assets/img/slate-s.png" width="560" height="729" mask="url(#s-mask)"/>
   </svg>
   <span class="s-eraser"></span>
 </div>
