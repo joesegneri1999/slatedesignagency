@@ -17,7 +17,7 @@ The form sends to slatedesignagency1999@gmail.com through FormSubmit (formsubmit
 ## Where things live
 Every page is its own HTML file in the top folder:
 - `index.html` (home), `about.html`, `services.html`, `process.html`, `contact.html`
-- Service pages: `drone-media.html`, `photography.html`, `videography.html`, `software-development.html`, `seo.html`
+- Service pages: `drone-media.html`, `photography.html`, `videography.html`, `web-development.html`, `software-development.html`, `seo.html`
 - `privacy.html`, `thanks.html` (shown after the contact form), `404.html` (broken links)
 
 The `assets/` folder holds everything else:

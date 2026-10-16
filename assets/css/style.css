@@ -345,6 +345,10 @@ footer.site{border-top:2px solid var(--line);padding:46px 0 30px}
 main{animation:fade .22s ease-out}
 body.leaving main,body.leaving footer.site{opacity:0;transition:opacity .12s ease-in}
 .chip{margin:0;text-transform:none}
+.tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1080px;margin:0 auto}
+.tracks .card{min-height:0}
+.tracks .card .big{font-size:34px}
+@media(max-width:860px){.tracks{grid-template-columns:1fr}.tracks .card{transform:none!important}}
 .checklist li.ok:before{content:"✓";color:var(--blue)}
 .foot-bottom a:hover{color:var(--blue)}
 /* home intro: overlay already showing on first paint */
