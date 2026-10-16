@@ -3,7 +3,7 @@
 Static site for GitHub Pages. No build step needed.
 
 ## Go live
-1. Create a GitHub repository (for example `slate-website`) and drag everything in this folder (all the .html files, `favicon.svg`, and the `assets` folder) into the repository root. `index.html` must be at the top level.
+1. Create a GitHub repository (for example `slate-website`) and drag everything in this folder (all the .html files, the icon files (`favicon.ico`, `favicon-32.png`, `icon-192.png`, `icon-512.png`, `apple-touch-icon.png`), and the `assets` folder) into the repository root. `index.html` must be at the top level.
 2. In the repo, go to **Settings → Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**, select **main** and **/ (root)**, then **Save**.
 4. After a minute or two, your site is live at the URL GitHub shows on that page.
