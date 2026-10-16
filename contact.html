@@ -73,17 +73,17 @@
             <input type="hidden" name="_subject" value="New project inquiry — Slate website">
             <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-row">
-              <div><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
-              <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+              <div><label for="f-name">Name</label><input id="f-name" aria-describedby="err-f-name" name="name" required autocomplete="name"><p class="field-error" id="err-f-name" hidden></p></div>
+              <div><label for="f-email">Email</label><input id="f-email" aria-describedby="err-f-email" name="email" type="email" required autocomplete="email"><p class="field-error" id="err-f-email" hidden></p></div>
             </div>
             <div class="form-row">
-              <div><label for="f-phone">Phone <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 555-5555"></div>
+              <div><label for="f-phone">Phone <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 555-5555" aria-describedby="err-f-phone"><p class="field-error" id="err-f-phone" hidden></p></div>
               <div><label for="f-biz">Business name</label><input id="f-biz" name="business" autocomplete="organization"></div>
             </div>
             <label>What do you need?</label>
             <div class="chips"><label class="chip"><input type="checkbox" name="services" value="Drone Media" data-key="drone"><span>Drone</span></label><label class="chip"><input type="checkbox" name="services" value="Photography" data-key="photography"><span>Photography</span></label><label class="chip"><input type="checkbox" name="services" value="Videography" data-key="videography"><span>Videography</span></label><label class="chip"><input type="checkbox" name="services" value="Web Development" data-key="web"><span>Websites</span></label><label class="chip"><input type="checkbox" name="services" value="Software Development" data-key="software"><span>Software</span></label><label class="chip"><input type="checkbox" name="services" value="SEO" data-key="seo"><span>SEO</span></label><label class="chip"><input type="checkbox" name="services" value="Not sure yet"><span>Not sure yet</span></label></div>
             <label for="f-msg">Tell us about the project</label>
-            <textarea id="f-msg" name="message" required placeholder="What are you working on? Any timeline?"></textarea>
+            <textarea id="f-msg" aria-describedby="err-f-msg" name="message" required placeholder="What are you working on? Any timeline?"></textarea><p class="field-error" id="err-f-msg" hidden></p>
             <button class="button solid" type="submit">Send it <span class="arrow">→</span></button>
             <div class="form-status" role="status" aria-live="polite"></div>
             <p class="form-note">Goes straight to slatedesignagency1999@gmail.com. We only use your info to reply. No spam.</p>

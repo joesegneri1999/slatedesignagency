@@ -346,6 +346,8 @@ main{animation:fade .22s ease-out}
 body.leaving main,body.leaving footer.site{opacity:0;transition:opacity .12s ease-in}
 .chip{margin:0;text-transform:none}
 .opt{font-weight:400;text-transform:none;color:#555}
+.field-error{color:var(--red);font-weight:700;font-size:15px;margin:6px 0 0}
+input.invalid,textarea.invalid{border-color:var(--red);background:#fff5f5}
 .tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1080px;margin:0 auto}
 .tracks .card{min-height:0}
 .tracks .card .big{font-size:34px}

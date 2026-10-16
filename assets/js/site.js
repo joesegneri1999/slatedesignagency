@@ -76,10 +76,55 @@
     var next = form.querySelector('input[name="_next"]');
     if (next) next.value = new URL('thanks.html', location.href).href;
 
+    form.setAttribute('novalidate', '');
+    var EMAIL_RE = /^[^\s@]+@[^\s@.]+(\.[^\s@.]+)*\.[a-z]{2,}$/i;
+    function phoneDigits(v){ return v.replace(/\D/g, ''); }
+    var rules = {
+      'f-name':  function(v){ return v.trim() ? '' : 'Please enter your name.'; },
+      'f-email': function(v){ v = v.trim(); if (!v) return 'Please enter your email.'; return EMAIL_RE.test(v) ? '' : 'Please enter a valid email, like name@company.com.'; },
+      'f-phone': function(v){
+        v = v.trim(); if (!v) return '';                                   // optional
+        if (/[^\d\s().+\-]/.test(v)) return 'Phone numbers can only use numbers, spaces, ( ), - and +.';
+        var d = phoneDigits(v);
+        if (d.length === 11 && d[0] === '1') d = d.slice(1);
+        if (d.length < 10) return 'That phone number is too short. Please enter all 10 digits, or leave it blank.';
+        if (d.length > 10) return 'That phone number is too long. Please enter a 10-digit number, or leave it blank.';
+        return '';
+      },
+      'f-msg':   function(v){ return v.trim() ? '' : 'Please tell us a little about the project.'; }
+    };
+    function check(id){
+      var el = document.getElementById(id), err = document.getElementById('err-' + id);
+      if (!el) return true;
+      var msg = rules[id](el.value);
+      el.classList.toggle('invalid', !!msg);
+      el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+      if (err) { err.textContent = msg; err.hidden = !msg; }
+      return !msg;
+    }
+    function validateAll(){
+      var first = null;
+      Object.keys(rules).forEach(function(id){ if (!check(id) && !first) first = id; });
+      if (first) document.getElementById(first).focus();
+      return !first;
+    }
+    Object.keys(rules).forEach(function(id){
+      var el = document.getElementById(id); if (!el) return;
+      el.addEventListener('input', function(){ if (el.classList.contains('invalid')) check(id); });
+      el.addEventListener('blur', function(){ if (el.value.trim()) check(id); });
+    });
+    var phoneEl = document.getElementById('f-phone');
+    if (phoneEl) phoneEl.addEventListener('blur', function(){
+      if (rules['f-phone'](phoneEl.value) || !phoneEl.value.trim()) return;
+      var d = phoneDigits(phoneEl.value); if (d.length === 11) d = d.slice(1);
+      phoneEl.value = '(' + d.slice(0,3) + ') ' + d.slice(3,6) + '-' + d.slice(6);
+    });
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var status = form.querySelector('.form-status');
-      if (!form.checkValidity()) { status.textContent = 'Please add your name, a valid email, and a quick note.'; form.reportValidity(); return; }
+      if (!validateAll()) { status.textContent = 'Please fix the highlighted fields.'; return; }
+      status.textContent = '';
       var d = new FormData(form);
       if (d.get('_honey')) return;
       var payload = {
